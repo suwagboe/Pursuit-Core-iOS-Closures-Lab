@@ -6,9 +6,13 @@ import UIKit
 
 
 // Your function here
+func applyKTimes(k: Int, closure: ()->()) {
+    for _ in 1...k{
+        closure()
+    }
+}
 
 // Uncomment out the following lines to check your solution
-
 //var myVal = 0
 //applyKTimes(5) {
 //    myVal += 1
@@ -21,6 +25,14 @@ import UIKit
 // Write a function called multiples(of:in) that takes in an array of Ints and returns all of the Ints that are a multiple of a given number n.  Use filter in your function.
 
 // Your function here
+
+func multiples(of more: [Int] , in this: numbers) -> Int {
+    let FilteredMultiples = more.filter{$0}
+    if FilteredMultiples/5{
+        print("these the are multiplys of 5")
+    }
+}
+
 
 // Uncomment out the following lines to check your solution
 
@@ -35,6 +47,7 @@ import UIKit
 // Write a function called largestValue(in:) that finds the largest Int in an array of Ints. Use reduce to solve this exercise.
 
 // Your function here
+//func largestValue(in: )
 
 // Uncomment out the following lines to check your solution
 
@@ -50,7 +63,20 @@ import UIKit
 
 // Your function here
 
-// Uncomment out the following lines to check your solution
+print(sortedNamesByLastName(in: firstAndLastTuples))
+
+let outputFour = sortedNamesByLastName(in: firstAndLastTuples)
+assert(outputFour.elementsEqual(expectedOutputFour, by: { $0 == $1 }), "Expected output to be \(expectedOutputFour), but found \(outputFour)")
+
+// filter // filter can only take 1 arguement
+let arr = [4, 5, 1, -7, -99]
+// print(arr.filter { $0 < 5}.sorted()) -- is another way to write to filter
+// $0 is a placeholder that says ignore the value if it does not apply
+let arrLowest = arr.filter { (a) -> Bool in
+    return a < 5
+}
+print(arrLowest.sorted())
+// Uncomment out the followi
 
 //let firstAndLastTuples = [
 //    ("Johann S.", "Bach"),
@@ -80,11 +106,22 @@ import UIKit
 // Write a function called sumOfSquaresOfOddNumbers(in:) that returns the sum of the squares of all the odd numbers from an array of Ints.  Use filter, map and reduce in your function.
 
 // Your function here
-
+func sumOfSquaresOfOddNumbers(arr: [Int])-> Int {
+    // below is correct just not what they are asking for
+    var odds = 0 // why is this yellow
+    for num in arr {
+        if num % 2 != 0 { // syntax to get the odd numbers
+            odds = num
+        }
+    arr.filter { (these) -> Bool in
+        return these % 2 != 1
+    }
+    }}
 // Uncomment out the following lines to check your solution
 
 //let evenMoreNumbers = [1, 2, 3, 4, 5, 6]
 //let expectedOutputFive = 35 // Explanation: 1 + 9 + 25 -> 35
 //let outputFive = sumOfSquaresOfOddNumbers(in: evenMoreNumbers)
 //assert(outputFive == expectedOutputFive, "Expected output to be \(expectedOutputFive), but found \(outputFive)")
+
 
